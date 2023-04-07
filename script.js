@@ -17,20 +17,13 @@
 // console.log(document.querySelector('.number-input').value);
 
 //? Вариант - передача функции в значении переменной.
-
 // const eventHandler = function () {
 //   console.log(document.querySelector('.number-input').value);
 // };
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
-
-const reloadButton = document
-  .querySelector('.again')
-  .addEventListener('click', () => {
-    location.reload();
-  });
 
 document.querySelector('.check').addEventListener('click', function () {
   const guessingNumber = Number(document.querySelector('.number-input').value);
@@ -69,4 +62,24 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+});
+
+//! Вариант перезагрузки страницы № 1
+// const reloadButton = document
+//   .querySelector('.again')
+//   .addEventListener('click', () => {
+//     location.reload();
+//   });
+
+//! Вариант перезагрузки страницы № 2
+document.querySelector('.again').addEventListener('click', function () {
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  score = 20;
+
+  document.querySelector('.question').textContent = '???';
+  document.querySelector('.question').style.width = '25rem';
+  document.querySelector('.guess-message').textContent = 'Начни угадывать!';
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.number-input').value = '';
+  document.querySelector('body').style.backgroundColor = 'rgb(0, 0, 0)';
 });
