@@ -25,8 +25,8 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
 
-const displayGuessMassage = function () {
-  document.querySelector('.question').textContent = 'message';
+const displayGuessMassage = function (message) {
+  document.querySelector('.guess-message').textContent = message;
 };
 
 document.querySelector('.check').addEventListener('click', function () {
