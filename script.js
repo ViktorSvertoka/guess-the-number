@@ -53,6 +53,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.guess-message').textContent = 'Вы проиграли!';
+      document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
+      document.querySelector('.question').textContent = 'GAME OVER';
       document.querySelector('.score').textContent = 0;
     }
 
@@ -64,6 +66,8 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
     } else {
       document.querySelector('.guess-message').textContent = 'Вы проиграли!';
+      document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
+      document.querySelector('.question').textContent = 'GAME OVER';
       document.querySelector('.score').textContent = 0;
     }
   }
