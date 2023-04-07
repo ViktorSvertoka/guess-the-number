@@ -26,6 +26,12 @@ const secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 let score = 20;
 
+const reloadButton = document
+  .querySelector('.again')
+  .addEventListener('click', () => {
+    location.reload();
+  });
+
 document.querySelector('.check').addEventListener('click', function () {
   const guessingNumber = Number(document.querySelector('.number-input').value);
   console.log(typeof guessingNumber);
