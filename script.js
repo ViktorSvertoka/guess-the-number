@@ -22,7 +22,6 @@
 // };
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-
 let score = 20;
 let highScore = 0;
 
@@ -45,23 +44,11 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.highscore').textContent = highScore;
     }
 
-    // to high
-  } else if (guessingNumber > secretNumber) {
+    // Number from input is wrong
+  } else if (guessingNumber !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.guess-message').textContent = 'Слишком много!';
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.guess-message').textContent = 'Вы проиграли!';
-      document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
-      document.querySelector('.question').textContent = 'GAME OVER';
-      document.querySelector('.score').textContent = 0;
-    }
-
-    // To low
-  } else if (guessingNumber < secretNumber) {
-    if (score > 1) {
-      document.querySelector('.guess-message').textContent = 'Слишком мало!';
+      document.querySelector('.guess-message').textContent =
+        guessingNumber > secretNumber ? 'Слишком много!' : 'Слишком мало!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
@@ -71,6 +58,33 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
+
+  // to high
+  //   } else if (guessingNumber > secretNumber) {
+  // if (score > 1) {
+  //   document.querySelector('.guess-message').textContent = 'Слишком много!';
+  //   score--;
+  //   document.querySelector('.score').textContent = score;
+  // } else {
+  //   document.querySelector('.guess-message').textContent = 'Вы проиграли!';
+  //   document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
+  //   document.querySelector('.question').textContent = 'GAME OVER';
+  //   document.querySelector('.score').textContent = 0;
+  // }
+
+  // To low
+  //   } else if (guessingNumber < secretNumber) {
+  //     if (score > 1) {
+  //       document.querySelector('.guess-message').textContent = 'Слишком мало!';
+  //       score--;
+  //       document.querySelector('.score').textContent = score;
+  //     } else {
+  //       document.querySelector('.guess-message').textContent = 'Вы проиграли!';
+  //       document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
+  //       document.querySelector('.question').textContent = 'GAME OVER';
+  //       document.querySelector('.score').textContent = 0;
+  //     }
+  //   }
 });
 
 //! Вариант перезагрузки страницы № 1
