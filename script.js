@@ -41,8 +41,8 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guessingNumber === secretNumber) {
     displayGuessMassage('Правильно!');
     displayQuestionMassage(secretNumber);
-    backgroundColor('rgb(9, 250, 21)');
     contentWidth('50rem');
+    backgroundColor('rgb(9, 250, 21)');
     if (score > highScore) {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
@@ -73,8 +73,8 @@ document.querySelector('.again').addEventListener('click', function () {
   contentWidth('25rem');
   displayGuessMassage('Начни угадывать!');
   totalScores(score);
-  document.querySelector('.number-input').value = '';
   backgroundColor('rgb(0, 0, 0)');
+  document.querySelector('.number-input').value = '';
 });
 
 //! Вариант перезагрузки страницы № 2, но тогда не сохранится High Score
