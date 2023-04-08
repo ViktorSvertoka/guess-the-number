@@ -58,33 +58,6 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = 0;
     }
   }
-
-  // to high
-  //   } else if (guessingNumber > secretNumber) {
-  // if (score > 1) {
-  //   document.querySelector('.guess-message').textContent = 'Слишком много!';
-  //   score--;
-  //   document.querySelector('.score').textContent = score;
-  // } else {
-  //   document.querySelector('.guess-message').textContent = 'Вы проиграли!';
-  //   document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
-  //   document.querySelector('.question').textContent = 'GAME OVER';
-  //   document.querySelector('.score').textContent = 0;
-  // }
-
-  // To low
-  //   } else if (guessingNumber < secretNumber) {
-  //     if (score > 1) {
-  //       document.querySelector('.guess-message').textContent = 'Слишком мало!';
-  //       score--;
-  //       document.querySelector('.score').textContent = score;
-  //     } else {
-  //       document.querySelector('.guess-message').textContent = 'Вы проиграли!';
-  //       document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
-  //       document.querySelector('.question').textContent = 'GAME OVER';
-  //       document.querySelector('.score').textContent = 0;
-  //     }
-  //   }
 });
 
 //! Вариант перезагрузки страницы № 1, но тогда не сохранится High Score
