@@ -21,6 +21,10 @@ const backgroundColor = function (color) {
   document.querySelector('body').style.backgroundColor = color;
 };
 
+const contentWidth = function (width) {
+  document.querySelector('.question').style.width = width;
+};
+
 document.querySelector('.check').addEventListener('click', function () {
   const guessingNumber = Number(document.querySelector('.number-input').value);
   console.log(typeof guessingNumber);
@@ -34,13 +38,11 @@ document.querySelector('.check').addEventListener('click', function () {
     displayGuessMassage('Правильно!');
     displayQuestionMassage(secretNumber);
     backgroundColor('rgb(9, 250, 21)');
-
-    document.querySelector('.question').style.width = '50rem';
+    contentWidth('50rem');
     if (score > highScore) {
       highScore = score;
       document.querySelector('.highscore').textContent = highScore;
     }
-
     // Number from input is wrong
   } else if (guessingNumber !== secretNumber) {
     if (score > 1) {
@@ -64,7 +66,7 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 20;
 
   displayQuestionMassage('???');
-  document.querySelector('.question').style.width = '25rem';
+  contentWidth('25rem');
   displayGuessMassage('Начни угадывать!');
   document.querySelector('.score').textContent = score;
   document.querySelector('.number-input').value = '';
