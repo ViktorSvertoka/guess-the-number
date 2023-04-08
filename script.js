@@ -66,14 +66,7 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-//! Вариант перезагрузки страницы № 1, но тогда не сохранится High Score
-// const reloadButton = document
-//   .querySelector('.again')
-//   .addEventListener('click', () => {
-//     location.reload();
-//   });
-
-//! Вариант перезагрузки страницы № 2, с сохранением результата High Score
+//! Вариант перезагрузки страницы № 1, с сохранением результата High Score
 document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
@@ -88,3 +81,10 @@ document.querySelector('.again').addEventListener('click', function () {
   backgroundColor('rgb(0, 0, 0)');
   // document.querySelector('body').style.backgroundColor = 'rgb(0, 0, 0)';
 });
+
+//! Вариант перезагрузки страницы № 2, но тогда не сохранится High Score
+// const reloadButton = document
+//   .querySelector('.again')
+//   .addEventListener('click', () => {
+//     location.reload();
+//   });
