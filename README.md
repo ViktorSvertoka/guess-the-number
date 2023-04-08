@@ -1,4 +1,4 @@
-# Mini Game
+# Mini Game 8-bit
 
 ![How it works](./screen1.png)
 
