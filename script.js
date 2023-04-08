@@ -29,6 +29,10 @@ const displayGuessMassage = function (message) {
   document.querySelector('.guess-message').textContent = message;
 };
 
+const displayQuestionMassage = function (question) {
+  document.querySelector('.question').textContent = question;
+};
+
 document.querySelector('.check').addEventListener('click', function () {
   const guessingNumber = Number(document.querySelector('.number-input').value);
   console.log(typeof guessingNumber);
@@ -42,7 +46,8 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guessingNumber === secretNumber) {
     displayGuessMassage('Правильно!');
     // document.querySelector('.guess-message').textContent = 'Правильно!';
-    document.querySelector('.question').textContent = secretNumber;
+    displayQuestionMassage(secretNumber);
+    // document.querySelector('.question').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = 'rgb(9, 250, 21)';
     document.querySelector('.question').style.width = '50rem';
     if (score > highScore) {
@@ -64,7 +69,8 @@ document.querySelector('.check').addEventListener('click', function () {
       displayGuessMassage('Вы проиграли!');
       //   document.querySelector('.guess-message').textContent = 'Вы проиграли!';
       document.querySelector('body').style.backgroundColor = 'rgb(250, 9, 21)';
-      document.querySelector('.question').textContent = 'GAME OVER';
+      displayQuestionMassage('GAME OVER');
+      //   document.querySelector('.question').textContent = 'GAME OVER';
       document.querySelector('.score').textContent = 0;
     }
   }
@@ -97,19 +103,20 @@ document.querySelector('.check').addEventListener('click', function () {
   //   }
 });
 
-//! Вариант перезагрузки страницы № 1
+//! Вариант перезагрузки страницы № 1, но тогда не сохранится High Score
 // const reloadButton = document
 //   .querySelector('.again')
 //   .addEventListener('click', () => {
 //     location.reload();
 //   });
 
-//! Вариант перезагрузки страницы № 2
+//! Вариант перезагрузки страницы № 2, с сохранением результата High Score
 document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
 
-  document.querySelector('.question').textContent = '???';
+  displayQuestionMassage('???');
+  //   document.querySelector('.question').textContent = '???';
   document.querySelector('.question').style.width = '25rem';
   displayGuessMassage('Начни угадывать!');
   //   document.querySelector('.guess-message').textContent = 'Начни угадывать!';
