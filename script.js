@@ -1,6 +1,6 @@
 'use strict';
 
-//? Вариант - передача функции в значении переменной.
+//? Variant - transfer of function in value of a variable.
 // const eventHandler = function () {
 //   console.log(document.querySelector('.number-input').value);
 // };
@@ -35,11 +35,11 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // No input
   if (!guessingNumber) {
-    displayGuessMassage('Введите число!');
+    displayGuessMassage('Enter the number!');
 
     // Player won
   } else if (guessingNumber === secretNumber) {
-    displayGuessMassage('Правильно!');
+    displayGuessMassage('You won!');
     displayQuestionMassage(secretNumber);
     contentWidth('50rem');
     backgroundColor('rgb(9, 250, 21)');
@@ -52,12 +52,12 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (guessingNumber !== secretNumber) {
     if (score > 1) {
       displayGuessMassage(
-        guessingNumber > secretNumber ? 'Слишком много!' : 'Слишком мало!',
+        guessingNumber > secretNumber ? 'Too much!' : 'Too few!',
       );
       score--;
       totalScores(score);
     } else {
-      displayGuessMassage('Вы проиграли!');
+      displayGuessMassage('You lose!');
       backgroundColor('rgb(250, 9, 21)');
       displayQuestionMassage('GAME OVER');
       totalScores(0);
@@ -65,20 +65,20 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-//! Вариант перезагрузки страницы № 1, с сохранением результата High Score
+//! Page Reload Option #1, Keeping High Score.
 document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   score = 20;
 
   displayQuestionMassage('???');
   contentWidth('25rem');
-  displayGuessMassage('Начни угадывать!');
+  displayGuessMassage('Start guessing!');
   totalScores(score);
   backgroundColor('rgb(0, 0, 0)');
   document.querySelector('.number-input').value = '';
 });
 
-//! Вариант перезагрузки страницы № 2, но тогда не сохранится High Score
+//! Page reload option #2, but then the High Score will not be saved.
 // const reloadButton = document
 //   .querySelector('.again')
 //   .addEventListener('click', () => {
