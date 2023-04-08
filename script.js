@@ -25,6 +25,10 @@ const contentWidth = function (width) {
   document.querySelector('.question').style.width = width;
 };
 
+const totalScores = function (score) {
+  document.querySelector('.score').textContent = score;
+};
+
 document.querySelector('.check').addEventListener('click', function () {
   const guessingNumber = Number(document.querySelector('.number-input').value);
   console.log(typeof guessingNumber);
@@ -50,12 +54,12 @@ document.querySelector('.check').addEventListener('click', function () {
         guessingNumber > secretNumber ? 'Слишком много!' : 'Слишком мало!',
       );
       score--;
-      document.querySelector('.score').textContent = score;
+      totalScores(score);
     } else {
       displayGuessMassage('Вы проиграли!');
       backgroundColor('rgb(250, 9, 21)');
       displayQuestionMassage('GAME OVER');
-      document.querySelector('.score').textContent = 0;
+      totalScores(0);
     }
   }
 });
@@ -68,7 +72,7 @@ document.querySelector('.again').addEventListener('click', function () {
   displayQuestionMassage('???');
   contentWidth('25rem');
   displayGuessMassage('Начни угадывать!');
-  document.querySelector('.score').textContent = score;
+  totalScores(score);
   document.querySelector('.number-input').value = '';
   backgroundColor('rgb(0, 0, 0)');
 });
